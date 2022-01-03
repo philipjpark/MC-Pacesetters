@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<head>
+	<title>Pacesetters</title>
+</head>
+<body style="background-color: rgb(191, 208, 216); text-align: center;font-style: oblique;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+	<h1 style="color:purple;"> <b>Zoom Zoom</b> </h1>
+	<SCRIPT LANGUAGE="JavaScript">
+	var runner = new Array(6);
+	var currunner = 0;
+	var begin;
+	runner[0] = new Image();
+	runner[0].src = "/ccoleman.jfif";
+	runner[1] = new Image();
+	runner[1].src = "/isles.jfif";
+	runner[2] = new Image();
+	runner[2].src = "/son heung min.jfif";
+	runner[3] = new Image();
+	runner[3].src = "/ross.jfif";
+	runner[4] = new Image();
+	runner[4].src = "/roman quinn.jfif";
+	runner[5] = new Image();
+	runner[5].src = "/russ.jfif";
+	function pace() {
+		if (currunner == 5) 
+			currunner = 0;
+		else 
+			++currunner;
+		document.runner.src = runner[currunner].src;	
+		}	
+
+	function sonic() {
+		if (currunner == 5) 
+			currunner = 0;
+		else 
+			++currunner;
+		document.runner.src = runner[currunner].src;	
+		}
+
+	function startTurning() {
+		if (begin)
+		clearInterval(begin);
+		begin = setInterval("pace()",400);
+		}
+		function startJetting() {
+		if (begin)
+		clearInterval(begin);
+		begin = setInterval("sonic()",200);
+		}
+</script>
+	<P><IMG SRC="/bolt.jfif" NAME="runner"></P>
+	<form>
+	<INPUT TYPE="button" NAME="pace" VALUE=" Pace "  onClick="startTurning();">
+	<INPUT TYPE="button" NAME="sonic" VALUE=" Sonic-Pace " onClick="startJetting();">
+	<INPUT TYPE="button" NAME="stop" VALUE=" Stop " onClick="clearInterval(begin);">
+</form>
+</body>
+</html>
+</html>

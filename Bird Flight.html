@@ -1,0 +1,49 @@
+<!-- Bird Flight -->
+
+<!DOCTYPE html>
+<head>
+	<style>
+	body {background-color:#c9e9f6;backdrop-filter:initial;}
+	</style>
+	
+	<title>BirdFlight</title>
+
+</head>
+<body>
+	<script type="text/javascript">
+	var startFlying;
+	var updown = 0;
+	var up = new Image();
+	up.src = "images/up.gif";
+	var down = new Image();
+	down.src = "images/down.gif";
+	flightPosition = 1;
+	function flap() {
+		var birdTag = document.getElementById("bird");
+		if (flightPosition == 1) {
+			document.images[0].src = up.src;
+			birdTag.style.left = "150px";
+			birdTag.style.top = "300px";
+			flightPosition = 2;
+		}
+		else if (flightPosition == 2) {
+			document.images[0].src = down.src;
+			birdTag.style.left = "500px";
+			birdTag.style.top = "160px";
+			flightPosition = 3;
+		}
+		else if (flightPosition == 3) {
+			document.images[0].src = up.src;
+			birdTag.style.left = "900px";
+			birdTag.style.top = "40px";
+			flightPosition = 1;
+		}
+	}
+	</script>
+	<p><img src="images/up.gif" id="bird" style="position: absolute; left: 40px; top: 400px" alt="Image of a bird" height="218" width="200" /></p>
+	<form action="">
+	<p><input type="button" value=" Fly " onclick="startFlying=setInterval('flap()',500);" />
+	<input type="button" value=" Stop " onclick="clearInterval(startFlying);" /></p>
+	</form>
+</body>
+</html>

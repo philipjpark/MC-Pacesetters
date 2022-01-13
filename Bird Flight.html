@@ -35,14 +35,14 @@
 		else if (flightPosition == 3) {
 			document.images[0].src = up.src;
 			birdTag.style.left = "900px";
-			birdTag.style.top = "40px";
+			birdTag.style.top = "20px";
 			flightPosition = 1;
 		}
 	}
 	</script>
 	<p><img src="images/up.gif" id="bird" style="position: absolute; left: 40px; top: 400px" alt="Image of a bird" height="218" width="200" /></p>
 	<form action="">
-	<p><input type="button" value=" Fly " onclick="startFlying=setInterval('flap()',500);" />
+	<p><input type="button" value=" Fly " onclick="startFlying=setInterval('flap()',1000);" />
 	<input type="button" value=" Stop " onclick="clearInterval(startFlying);" /></p>
 	</form>
 </body>
